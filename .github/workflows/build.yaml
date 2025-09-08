@@ -44,18 +44,11 @@ jobs:
           ./configure.sh
           pnpm run format-check
           pnpm run lint
-          YAAGL_CHANNEL_CLIENT=hk4ecn node ./build-app.js
           YAAGL_CHANNEL_CLIENT=hk4eos node ./build-app.js
 
       - name: Tar app
         run: |
-          tar -zcf Yaagl.tar.gz Yaagl.app
           tar -zcf "Yaagl OS.tar.gz" "Yaagl OS.app"
-      - name: Upload artifact - app
-        uses: actions/upload-artifact@v4
-        with:
-          name: app
-          path: Yaagl.tar.gz
       - name: Upload artifact - app-os
         uses: actions/upload-artifact@v4
         with:
