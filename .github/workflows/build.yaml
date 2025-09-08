@@ -2,7 +2,7 @@ name: "Regular CI Build"
 on:
   push:
     branches:
-      - main
+      - sophon-impl
 jobs:
   build:
     runs-on: macos-latest
